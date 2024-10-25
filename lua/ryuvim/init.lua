@@ -1,8 +1,8 @@
 local config = {}
 
 -- called in init.lua
-local function setup()
-	-- config = cfg
+local function setup(cfg)
+	config = cfg
 
 	keymap_opts = {
 		silent = true,
@@ -18,5 +18,4 @@ local function getConfig()
 	return config
 end
 
--- return { setup = setup, getConfig = getConfig }
-return { setup = setup }
+return { setup = setup, getConfig = getConfig }

@@ -18,7 +18,6 @@ class Ryuvim(object):
     def __init__(self, nvim):
         self.nvim = nvim
         self.cfg = nvim.exec_lua('return require("ryuvim").getConfig()')
-        self.path = Path(self.cfg["path"]).expanduser()
         print("Hello Init!")
 
     @pynvim.function("Ryuvim", sync=True)
