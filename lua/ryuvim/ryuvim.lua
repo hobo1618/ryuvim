@@ -24,7 +24,8 @@ function M.start()
 	print("Starting")
 	-- Construct the command to execute Python with the passed keywords
 	-- local command = "python ../../backend/main.py" .. keywords
-	local command = "python3 ../../backend/main.py"
+	-- local command = "python ../../backend/main.py"
+	local command = "python --version"
 
 	-- Execute the Python script and capture the output
 	local output = vim.fn.system(command)
