@@ -21,11 +21,11 @@ end
     ```
 ]]
 function M.start()
-	print("Starting")
+	print("./main.py")
 	-- Construct the command to execute Python with the passed keywords
 	-- local command = "python ../../backend/main.py" .. keywords
 	-- local command = "python ../../backend/main.py"
-	local command = "python --version"
+	local command = "python ./main.py"
 
 	-- Execute the Python script and capture the output
 	local output = vim.fn.system(command)
@@ -43,7 +43,17 @@ end
     ```
 ]]
 function M.stop()
-	print("Stopping")
+	print("../main.py")
+	-- Construct the command to execute Python with the passed keywords
+	-- local command = "python ../../backend/main.py" .. keywords
+	-- local command = "python ../../backend/main.py"
+	local command = "python ../main.py"
+
+	-- Execute the Python script and capture the output
+	local output = vim.fn.system(command)
+
+	-- Print or return the output (for debugging)
+	print(output)
 end
 
 --[[
@@ -55,7 +65,17 @@ end
     ```
 ]]
 function M.status()
-	print("Status")
+	print("../../main.py")
+	-- Construct the command to execute Python with the passed keywords
+	-- local command = "python ../../backend/main.py" .. keywords
+	-- local command = "python ../../backend/main.py"
+	local command = "python ../../main.py"
+
+	-- Execute the Python script and capture the output
+	local output = vim.fn.system(command)
+
+	-- Print or return the output (for debugging)
+	print(output)
 end
 
 return M
