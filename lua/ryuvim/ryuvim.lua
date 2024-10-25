@@ -22,6 +22,15 @@ end
 ]]
 function M.start()
 	print("Starting")
+	-- Construct the command to execute Python with the passed keywords
+	-- local command = "python ../../backend/main.py" .. keywords
+	local command = "python ../../backend/main.py"
+
+	-- Execute the Python script and capture the output
+	local output = vim.fn.system(command)
+
+	-- Print or return the output (for debugging)
+	print(output)
 end
 
 --[[

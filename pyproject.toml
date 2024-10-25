@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "ryuvim"
+version = "0.1.0"
+description = ""
+authors = ["hobo1618 <hobdenw@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pynvim = "^0.5.0"
+falkordb = "^1.0.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
