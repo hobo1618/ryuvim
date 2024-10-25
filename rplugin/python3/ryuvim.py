@@ -25,9 +25,9 @@ class Ryuvim(object):
         self.nvim.command('echo "Hello World!"')
         print("Hello World print!")
 
-    @pynvim.command("RyuvimCommand", nargs="*", range="")
+    @pynvim.command("RyuvimCommand", nargs="*")
     def ryuvim_command(self):
-        self.nvim.command('echo "Hello command!"')
+        # self.nvim.command('echo "Hello command!"')
         print("Hello command print!")
 
     @pynvim.function("TestFunction", sync=True)
