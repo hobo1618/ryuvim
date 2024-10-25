@@ -18,13 +18,14 @@ class Ryuvim(object):
         self.nvim = nvim
         self.cfg = nvim.exec_lua('return require("ryuvim").getConfig()')
         self.path = Path(self.cfg["path"]).expanduser()
+        print("Hello Init!")
 
-    @pynvim.function("Ryuvim")
+    @pynvim.function("Ryuvim", sync=True)
     def ryuvim(self):
         self.nvim.command('echo "Hello World!"')
         print("Hello World!")
 
-    @pynvim.function("RyuvimOpenAI")
+    @pynvim.function("RyuvimOpenAI", sync=True)
     def ryuvimOpenAI(self):
         response = client.chat.completions.create(
             model="gpt-4o",
