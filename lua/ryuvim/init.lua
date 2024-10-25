@@ -1,18 +1,20 @@
-local config = require("ryuvim/config")
-local marp = require("ryuvim/ryuvim")
+local config = {}
 
-local M = {}
+-- called in init.lua
+local function setup(cfg)
+	config = cfg
 
-M.setup = config.setup
-M.start = marp.start
-M.stop = marp.stop
-M.status = marp.status
-M.toggle = marp.toggle
+	keymap_opts = {
+		silent = true,
+	}
 
--- create MarpStart command
-vim.api.nvim_create_user_command("RyuStart", M.start, { desc = "Start Marp" })
-vim.api.nvim_create_user_command("RyuStop", M.stop, { desc = "Stop Marp" })
-vim.api.nvim_create_user_command("RyuStatus", M.status, { desc = "Show Marp status" })
-vim.api.nvim_create_user_command("RyuToggle", M.toggle, { desc = "Toggle Marp (start/stop)" })
+	-- keymap to functions defined in neojot.py
+	vim.keymap.set("n", "<Leader>ww", ":call Ryuvim()<CR>", keymap_opts)
+end
 
-return M
+-- Used in Python to get config
+local function getConfig()
+	return config
+end
+
+return { setup = setup, getConfig = getConfig }
