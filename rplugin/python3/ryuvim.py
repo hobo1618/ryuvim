@@ -1,22 +1,15 @@
 import pynvim
-import os
-from openai import OpenAI
-
-api_key = os.getenv("OPENAI_API_KEY")
-
-if not api_key:
-    raise ValueError("Please set the OPENAI_API_KEY environment variable.")
-
-# Set up the API request to OpenAI
-client = OpenAI(api_key=api_key)
+from pathlib import Path
 
 
 @pynvim.plugin
 class Ryuvim(object):
     def __init__(self, nvim):
         self.nvim = nvim
+        self.cfg = nvim.exec_lua('return require("ryuvim").getConfig()')
+        self.path = Path(self.cfg["path"]).expanduser()
 
-    @pynvim.command("Ryuvim", nargs="*")
+    @pynvim.function("Ryuvim")
     def ryuvim(self, args):
         self.nvim.command('echo "Hello World!"')
         print("Hello World!")
