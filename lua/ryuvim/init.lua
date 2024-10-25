@@ -10,7 +10,7 @@ local function setup(cfg)
 
 	-- keymap to functions defined in neojot.py
 	vim.keymap.set("n", "<Leader>ww", ":call Ryuvim()<CR>", keymap_opts)
-	vim.keymap.set("n", "<Leader>ee", ":call Ryuvim()<CR>", keymap_opts)
+	vim.keymap.set("n", "<Leader>ee", ":call RyuvimOpenAI()<CR>", keymap_opts)
 end
 
 -- Used in Python to get config
