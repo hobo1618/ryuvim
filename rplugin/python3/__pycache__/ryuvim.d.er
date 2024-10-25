@@ -1,0 +1,9 @@
+##[pylyzer] failed /home/willh/Documents/dev/ryuvim/rplugin/python3/ryuvim.py 1729889549 242
+.pynvim = pyimport "pynvim"
+
+.Ryuvim: ClassType
+.Ryuvim <: Obj
+.Ryuvim.nvim: Never
+.Ryuvim.__call__: (nvim: Obj) -> ryuvim.Ryuvim
+.Ryuvim.ryu: (self: ryuvim.Ryuvim, args: Obj, range: Obj) -> Never
+
