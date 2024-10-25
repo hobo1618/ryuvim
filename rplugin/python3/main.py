@@ -1,4 +1,5 @@
 import pynvim
+import os
 from openai import OpenAI
 
 
